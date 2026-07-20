@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f5f2">
+    <title>Admin Login | Shri Ganesh Juice Centre</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <script src="../js/store.js" defer></script>
+    <script src="../js/admin-common.js" defer></script>
+    <script src="../js/admin-login.js" defer></script>
+</head>
+<body class="admin-body login-body">
+    <main class="login-layout">
+        <section class="login-panel" aria-labelledby="login-title">
+            <div class="admin-brand login-brand">
+                <span class="admin-brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 32 32"><path d="M8 18c0-6.6 5.4-12 12-12 0 6.6-5.4 12-12 12Z"></path><path d="M9 18c4.5-.4 8.3-2.9 11-7"></path><path d="M7 17c5.5 0 10 4.5 10 10H7V17Z"></path></svg>
+                </span>
+                <span class="admin-brand-copy">
+                    <strong>Shri Ganesh Juice Centre</strong>
+                    <small>Admin Panel</small>
+                </span>
+            </div>
+
+            <div class="login-heading">
+                <p class="admin-eyebrow" id="panel-eyebrow">Secure access</p>
+                <h1 id="login-title">Admin Login</h1>
+                <p id="panel-copy">Sign in to manage menu items, availability, pricing, and images.</p>
+            </div>
+
+            <div id="flash-stack" class="flash-stack" aria-live="polite"></div>
+
+            <!-- Shown once an admin account already exists -->
+            <form id="login-form" class="login-form" hidden>
+                <div class="field-group">
+                    <label for="username">Username</label>
+                    <div class="input-shell">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5.5 20c.5-4 2.7-6 6.5-6s6 2 6.5 6"></path></svg>
+                        <input id="username" name="username" type="text" autocomplete="username" required autofocus>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label for="password">Password</label>
+                    <div class="input-shell">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+                        <input id="password" name="password" type="password" autocomplete="current-password" required>
+                    </div>
+                </div>
+
+                <button class="button button-primary login-button" type="submit">
+                    <span>Log in securely</span>
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"></path></svg>
+                </button>
+            </form>
+
+            <!-- Shown on first run, when no admin account exists yet -->
+            <form id="setup-form" class="login-form" hidden>
+                <div class="field-group">
+                    <label for="setup-username">Choose a username</label>
+                    <div class="input-shell">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5.5 20c.5-4 2.7-6 6.5-6s6 2 6.5 6"></path></svg>
+                        <input id="setup-username" name="username" type="text" autocomplete="username" required autofocus>
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label for="setup-password">Choose a password</label>
+                    <div class="input-shell">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+                        <input id="setup-password" name="password" type="password" autocomplete="new-password" required minlength="6">
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label for="setup-password-confirm">Confirm password</label>
+                    <div class="input-shell">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path></svg>
+                        <input id="setup-password-confirm" name="password_confirm" type="password" autocomplete="new-password" required minlength="6">
+                    </div>
+                </div>
+
+                <button class="button button-primary login-button" type="submit">
+                    <span>Create admin account</span>
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"></path></svg>
+                </button>
+            </form>
+
+            <p class="login-footnote">Authorized administrators only</p>
+        </section>
+    </main>
+</body>
+</html>

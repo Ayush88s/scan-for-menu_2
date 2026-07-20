@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f5f2">
+    <title>Edit About Page | Shri Ganesh Juice Centre</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <script src="../js/store.js" defer></script>
+    <script src="../js/admin-common.js" defer></script>
+    <script src="../js/admin-about.js" defer></script>
+</head>
+<body class="admin-body form-body">
+    <header class="admin-topbar">
+        <div class="topbar-inner">
+            <a class="admin-brand" href="dashboard.html" aria-label="Admin dashboard">
+                <span class="admin-brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 18c0-6.6 5.4-12 12-12 0 6.6-5.4 12-12 12Z"></path><path d="M9 18c4.5-.4 8.3-2.9 11-7"></path><path d="M7 17c5.5 0 10 4.5 10 10H7V17Z"></path></svg></span>
+                <span class="admin-brand-copy"><strong>Shri Ganesh Juice Centre</strong><small>Admin Panel</small></span>
+            </a>
+            <a class="topbar-back" href="dashboard.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12 4-6 6 6 6"></path></svg><span>Back to Dashboard</span></a>
+        </div>
+    </header>
+
+    <main class="admin-main form-main">
+        <section class="form-page-heading">
+            <a class="mobile-back" href="dashboard.html" aria-label="Back to dashboard">&larr;</a>
+            <div><p class="admin-eyebrow">Website content</p><h1>Edit About Page</h1><p>Manage the story and gallery shown to customers.</p></div>
+        </section>
+
+        <div id="flash-stack" class="flash-stack dashboard-flashes" aria-live="polite"></div>
+
+        <div class="about-management-stack">
+            <form id="content-form" class="item-editor">
+                <section class="form-section about-content-section">
+                    <div class="form-section-heading"><span class="section-number">01</span><div><h2>About Content</h2><p>Only this text appears in the public content area.</p></div></div>
+                    <div class="form-field">
+                        <label for="heading">About Title</label>
+                        <input id="heading" name="heading" class="form-control" maxlength="160" placeholder="Optional title">
+                        <p class="upload-note">Leave blank to show no title.</p>
+                    </div>
+                    <div class="form-field about-content-field">
+                        <label for="content">About Content</label>
+                        <textarea id="content" name="content" class="form-control textarea-control about-content-control" rows="10" required maxlength="5000" placeholder="Write a short description about the juice centre..."></textarea>
+                        <div class="field-help"><span>Plain text</span><span>Line breaks are preserved</span></div>
+                        <span class="field-error" data-error-for="content" role="alert" hidden></span>
+                    </div>
+                    <div class="about-form-actions"><button class="button button-primary" type="submit">Save Content</button></div>
+                </section>
+            </form>
+
+            <section class="form-section about-gallery-section">
+                <div class="form-section-heading"><span class="section-number">02</span><div><h2>About Gallery</h2><p>Add images without replacing the existing gallery.</p></div></div>
+                <form id="images-form" class="about-upload-form">
+                    <div class="form-field upload-field">
+                        <label class="upload-control" for="images">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M8 8l4-4 4 4M5 14v5h14v-5"></path></svg>
+                            <span><strong>Choose images</strong><small id="about-upload-file-name">JPG, JPEG, PNG or WEBP</small></span>
+                        </label>
+                        <input id="images" name="images" class="file-input" type="file" accept=".jpg,.jpeg,.png,.webp" multiple>
+                        <p class="upload-note">Select one or several files.</p>
+                        <span class="field-error" data-error-for="images" role="alert" hidden></span>
+                    </div>
+                    <div id="about-selected-previews" class="about-selected-previews" aria-live="polite"></div>
+                    <div class="about-form-actions"><button class="button button-primary" type="submit">Upload Images</button></div>
+                </form>
+
+                <div class="about-existing-gallery">
+                    <div class="about-gallery-heading"><h3>Existing images</h3><span id="about-image-count">0 images</span></div>
+                    <div id="about-admin-gallery" class="about-admin-gallery"></div>
+                    <div id="about-gallery-empty" class="about-gallery-empty" hidden>
+                        <strong>No images uploaded</strong>
+                        <p>The public About page will show content without an image section.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

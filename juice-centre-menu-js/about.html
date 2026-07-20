@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f1e8">
+    <title id="page-title">About | Shri Ganesh Juice Centre</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/store.js" defer></script>
+    <script src="js/about.js" defer></script>
+</head>
+<body class="customer-body about-body">
+    <div class="ambient-background" aria-hidden="true">
+        <span class="ambient-orb ambient-orb-one"></span>
+        <span class="ambient-orb ambient-orb-two"></span>
+        <span class="ambient-orb ambient-orb-three"></span>
+    </div>
+
+    <header class="site-header is-static">
+        <nav class="nav-inner" aria-label="Main navigation">
+            <a class="logo" href="index.html" aria-label="Shri Ganesh Juice Centre menu">
+                <span class="logo-mark" aria-hidden="true">
+                    <svg viewBox="0 0 32 32"><path d="M8 18c0-6.6 5.4-12 12-12 0 6.6-5.4 12-12 12Z"></path><path d="M9 18c4.5-.4 8.3-2.9 11-7"></path><path d="M7 17c5.5 0 10 4.5 10 10H7V17Z"></path></svg>
+                </span>
+                <span class="logo-copy"><strong>Shri Ganesh Juice Centre</strong><small>Freshly poured</small></span>
+            </a>
+
+            <a class="nav-link" href="index.html">
+                <svg class="back-arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="m12 4-6 6 6 6"></path></svg>
+                <span>Back to Menu</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="about-page">
+        <section class="about-card about-content-card entrance">
+            <div class="about-copy">
+                <h1 id="about-heading" hidden></h1>
+                <p id="about-lead" class="about-lead"></p>
+                <a class="back-button" href="index.html">
+                    <span>Explore the menu</span>
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"></path></svg>
+                </a>
+            </div>
+        </section>
+
+        <section id="about-gallery" class="about-gallery entrance" aria-label="About gallery" hidden>
+            <!-- gallery images injected by about.js -->
+        </section>
+    </main>
+</body>
+</html>

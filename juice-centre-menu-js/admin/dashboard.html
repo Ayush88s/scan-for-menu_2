@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f5f2">
+    <title>Admin Dashboard | Shri Ganesh Juice Centre</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <script src="../js/store.js" defer></script>
+    <script src="../js/admin-common.js" defer></script>
+    <script src="../js/admin-dashboard.js" defer></script>
+</head>
+<body class="admin-body dashboard-body">
+    <header class="admin-topbar">
+        <div class="topbar-inner">
+            <a class="admin-brand" href="dashboard.html" aria-label="Admin dashboard">
+                <span class="admin-brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 32 32"><path d="M8 18c0-6.6 5.4-12 12-12 0 6.6-5.4 12-12 12Z"></path><path d="M9 18c4.5-.4 8.3-2.9 11-7"></path><path d="M7 17c5.5 0 10 4.5 10 10H7V17Z"></path></svg>
+                </span>
+                <span class="admin-brand-copy"><strong>Shri Ganesh Juice Centre</strong><small>Admin Panel</small></span>
+            </a>
+
+            <div class="admin-account">
+                <span id="account-avatar" class="account-avatar" aria-hidden="true"></span>
+                <span class="account-copy"><small>Signed in as</small><strong id="account-username"></strong></span>
+                <button class="logout-button" type="button" data-logout title="Log out">
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M8 4H4v12h4M12 6l4 4-4 4M7 10h9"></path></svg>
+                    <span>Log out</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <section class="dashboard-heading">
+            <div>
+                <p class="admin-eyebrow">Overview</p>
+                <h1>Dashboard</h1>
+                <p>Manage your digital menu from one place.</p>
+            </div>
+            <div class="dashboard-heading-actions">
+                <a class="button button-secondary" href="about.html">
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 5h12v10H4zM7 8h6M7 11h4"></path></svg>
+                    <span>Manage About Page</span>
+                </a>
+                <a class="button button-primary heading-add-button" href="item-form.html">
+                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12"></path></svg>
+                    <span>Add New Item</span>
+                </a>
+            </div>
+        </section>
+
+        <div id="flash-stack" class="flash-stack dashboard-flashes" aria-live="polite"></div>
+
+        <section class="statistics-grid" aria-label="Menu item statistics">
+            <article class="stat-card stat-total">
+                <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"></rect><rect x="14" y="4" width="6" height="6" rx="1"></rect><rect x="4" y="14" width="6" height="6" rx="1"></rect><rect x="14" y="14" width="6" height="6" rx="1"></rect></svg></span>
+                <div><p>Total Items</p><strong id="stat-total">0</strong></div>
+            </article>
+            <article class="stat-card stat-available">
+                <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="m8.5 12 2.3 2.3 4.8-5"></path></svg></span>
+                <div><p>Available Items</p><strong id="stat-available">0</strong></div>
+            </article>
+            <article class="stat-card stat-unavailable">
+                <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M9 9l6 6M15 9l-6 6"></path></svg></span>
+                <div><p>Unavailable Items</p><strong id="stat-unavailable">0</strong></div>
+            </article>
+        </section>
+
+        <section class="management-section" aria-labelledby="menu-items-heading">
+            <div class="management-header">
+                <div>
+                    <p class="admin-eyebrow">Menu management</p>
+                    <h2 id="menu-items-heading">Menu Items</h2>
+                    <p id="items-count-copy">0 items in your menu</p>
+                </div>
+                <div class="management-actions">
+                    <form id="search-form" class="admin-search">
+                        <label class="visually-hidden" for="q">Search items by name</label>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+                        <input id="q" name="q" type="search" placeholder="Search menu items...">
+                        <a id="search-reset" class="search-reset" href="dashboard.html" aria-label="Clear search" hidden>&times;</a>
+                        <button class="button button-secondary search-submit" type="submit">Search</button>
+                    </form>
+                    <a class="button button-primary toolbar-add-button" href="item-form.html">
+                        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12"></path></svg>
+                        <span>Add New Item</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="menu-table-wrap">
+                <table class="menu-table">
+                    <thead>
+                        <tr><th>Image</th><th>Name</th><th>Type</th><th>Price</th><th>Availability</th><th>Actions</th></tr>
+                    </thead>
+                    <tbody id="menu-table-body">
+                        <!-- rows injected by admin-dashboard.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

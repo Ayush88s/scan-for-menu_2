@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f3f5f2">
+    <title id="page-title">Add Menu Item | Shri Ganesh Juice Centre</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <script src="../js/store.js" defer></script>
+    <script src="../js/admin-common.js" defer></script>
+    <script src="../js/admin-item-form.js" defer></script>
+</head>
+<body class="admin-body form-body">
+    <header class="admin-topbar">
+        <div class="topbar-inner">
+            <a class="admin-brand" href="dashboard.html" aria-label="Admin dashboard">
+                <span class="admin-brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 18c0-6.6 5.4-12 12-12 0 6.6-5.4 12-12 12Z"></path><path d="M9 18c4.5-.4 8.3-2.9 11-7"></path><path d="M7 17c5.5 0 10 4.5 10 10H7V17Z"></path></svg></span>
+                <span class="admin-brand-copy"><strong>Shri Ganesh Juice Centre</strong><small>Admin Panel</small></span>
+            </a>
+            <a class="topbar-back" href="dashboard.html"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m12 4-6 6 6 6"></path></svg><span>Back to Dashboard</span></a>
+        </div>
+    </header>
+
+    <main class="admin-main form-main">
+        <section class="form-page-heading">
+            <a class="mobile-back" href="dashboard.html" aria-label="Back to dashboard">&larr;</a>
+            <div>
+                <p class="admin-eyebrow">Menu management</p>
+                <h1 id="form-heading">Add Menu Item</h1>
+                <p id="form-subheading">Create a new item for your digital menu.</p>
+            </div>
+        </section>
+
+        <div id="flash-stack" class="flash-stack dashboard-flashes" aria-live="polite"></div>
+
+        <form id="item-form" class="item-editor" novalidate>
+            <div class="editor-grid">
+                <div class="editor-primary">
+                    <section class="form-section">
+                        <div class="form-section-heading"><span class="section-number">01</span><div><h2>Basic Information</h2><p>The essential details customers will see.</p></div></div>
+                        <div class="field-grid">
+                            <div class="form-field field-full">
+                                <label for="name">Item Name</label>
+                                <input id="name" name="name" class="form-control" required maxlength="120" placeholder="e.g. Mango Milkshake">
+                                <span class="field-error" data-error-for="name" role="alert" hidden></span>
+                            </div>
+                            <div class="form-field">
+                                <label for="item_type">Item Type</label>
+                                <div class="select-shell">
+                                    <select id="item_type" name="item_type" class="form-control"></select>
+                                    <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"></path></svg>
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="price">Price</label>
+                                <div class="price-shell">
+                                    <span aria-hidden="true">&#8377;</span>
+                                    <input id="price" name="price" class="form-control" type="number" min="0" step="0.01" required placeholder="0.00">
+                                </div>
+                                <span class="field-error" data-error-for="price" role="alert" hidden></span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="form-section">
+                        <div class="form-section-heading"><span class="section-number">02</span><div><h2>Details</h2><p>Add an optional description for the item detail view.</p></div></div>
+                        <div class="form-field">
+                            <label for="description">Description</label>
+                            <textarea id="description" name="description" class="form-control textarea-control" rows="6" maxlength="2000" placeholder="Describe ingredients, flavour, or what makes this drink special..."></textarea>
+                            <div class="field-help"><span>Optional</span><span>Maximum 2,000 characters</span></div>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="editor-secondary">
+                    <section class="form-section image-section">
+                        <div class="form-section-heading compact"><span class="section-number">03</span><div><h2>Item Image</h2><p>Use a clear square or portrait image.</p></div></div>
+                        <div class="image-preview-shell">
+                            <img id="image-preview" class="editor-image-preview" alt="Image preview" hidden>
+                            <div id="image-preview-placeholder" class="editor-image-placeholder">
+                                <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 7h22v18H5z"></path><circle cx="12" cy="13" r="3"></circle><path d="m6 23 6-6 4 4 3-3 7 6"></path></svg>
+                                <strong>No image selected</strong><span>Preview appears here</span>
+                            </div>
+                        </div>
+                        <div class="form-field upload-field">
+                            <label class="upload-control" for="image">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M8 8l4-4 4 4M5 14v5h14v-5"></path></svg>
+                                <span><strong>Choose an image</strong><small id="upload-file-name">JPG, JPEG, PNG or WEBP</small></span>
+                            </label>
+                            <input id="image" name="image" class="file-input" type="file" accept=".jpg,.jpeg,.png,.webp">
+                            <p class="upload-note">Images are stored in this browser only.</p>
+                            <span class="field-error" data-error-for="image" role="alert" hidden></span>
+                        </div>
+                    </section>
+
+                    <section class="form-section availability-section">
+                        <div class="form-section-heading compact"><span class="section-number">04</span><div><h2>Availability</h2><p>Control whether customers can get this item.</p></div></div>
+                        <label class="switch-control" for="is_available">
+                            <input id="is_available" name="is_available" class="switch-input" type="checkbox" checked>
+                            <span class="switch-track" aria-hidden="true"><span></span></span>
+                            <span class="switch-copy"><strong>Available on menu</strong><small>Customers will see its current status.</small></span>
+                        </label>
+                    </section>
+                </aside>
+            </div>
+
+            <div class="editor-actions">
+                <a class="button button-secondary" href="dashboard.html">Cancel</a>
+                <button id="submit-button" class="button button-primary" type="submit">Add Menu Item</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
